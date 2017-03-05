@@ -6,7 +6,7 @@ import reducers from '../reducers';
 
 const logger = createLogger();
 
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise, logger, thunk)(createStore);
+const createStoreWithMiddleware = applyMiddleware(reduxPromise, logger, thunk)(createStore);
 const store = createStoreWithMiddleware(reducers);
 
 export default store;
