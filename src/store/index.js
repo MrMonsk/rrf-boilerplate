@@ -8,3 +8,5 @@ const logger = createLogger();
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise, logger, thunk)(createStore);
 const store = createStoreWithMiddleware(reducers);
+
+export default store;
