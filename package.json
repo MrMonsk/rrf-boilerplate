@@ -1,0 +1,47 @@
+{
+  "name": "rrf-boilerplate",
+  "version": "0.0.1",
+  "description": "slightly opinionated react-redux-firebase boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MrMonsk/rrf-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "redux-thunk",
+    "firebase"
+  ],
+  "author": "Yowon Yoon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrMonsk/rrf-boilerplate/issues"
+  },
+  "homepage": "https://github.com/MrMonsk/rrf-boilerplate#readme",
+  "dependencies": {
+    "firebase": "^3.7.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.8.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "css-loader": "^0.26.2",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.2",
+    "style-loader": "^0.13.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  }
+}
