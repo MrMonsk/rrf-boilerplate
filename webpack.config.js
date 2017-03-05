@@ -1,6 +1,6 @@
 module.exports = {
   devtool: 'inline-source-map',
-  entry: __dirname + '/src/app.jsx',
+  entry: __dirname + '/src/containers/App.jsx',
   output: {
     filename: 'bundle.js'
   },
