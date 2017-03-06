@@ -10,4 +10,4 @@ const main = (
   </Provider>
 );
 
-ReactDOM.render(main, document.getElementById('container'));
+ReactDOM.render(main, document.getElementById('root'));
