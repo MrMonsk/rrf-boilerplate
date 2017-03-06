@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import store from '../store';
+import { connect } from 'react-redux';
 
-const main = (
-  <Provider store={store}>
-    <div>RRF Boilerplate</div>
-  </Provider>
-);
+class App extends Component {
 
-ReactDOM.render(main, document.getElementById('container'));
+  render() {
+    return(<div>Hello World</div>)
+  }
+}
+
+export default App;
