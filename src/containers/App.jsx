@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class App extends Component {
 
   render() {
-    return(<div>Hello World</div>)
+    return(<div>RRF Boilerplate</div>)
   }
 }
 
