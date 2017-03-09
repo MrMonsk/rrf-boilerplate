@@ -5,7 +5,21 @@ import { connect } from 'react-redux';
 class App extends Component {
 
   render() {
-    return(<div>RRF Boilerplate</div>)
+
+    const style = {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 750
+    }
+
+    return(
+      <div style={style}>
+        <h1>
+          RRF Boilerplate
+        </h1>
+      </div>
+    )
   }
 }
 
