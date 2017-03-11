@@ -4,5 +4,15 @@ logs
 npm-debug.log*
 firebase-debug.log
 
+build/
+package/
+
+.DS_Store
+*.zip
+*.crx
+*.pem
+*.sketch
+update.xml
+
 # Dependency directories
 node_modules
