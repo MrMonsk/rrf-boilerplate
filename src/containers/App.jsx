@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import styles from './App.sass';
 
+import Form from '../components/Form';
+
 class App extends Component {
 
   render() {
 
     const style = {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: 750
+      textAlign: 'center'
+      // display: 'flex',
+      // justifyContent: 'center',
+      // alignItems: 'center',
+      // height: 900
     }
 
     return(
@@ -19,6 +22,7 @@ class App extends Component {
         <h1>
           RRF Boilerplate
         </h1>
+        <Form />
       </div>
     )
   }
