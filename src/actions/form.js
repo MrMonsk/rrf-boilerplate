@@ -1,0 +1,8 @@
+import { LOGIN_FROM_EMAIL } from '../constants/actionTypes.js';
+
+export function loginFromEmail(user) {
+	return {
+		type: LOGIN_FROM_EMAIL,
+		payload: user
+	}
+}

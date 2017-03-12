@@ -1,0 +1,1 @@
+export const LOGIN_FROM_EMAIL = 'LOGIN_FROM_EMAIL';
