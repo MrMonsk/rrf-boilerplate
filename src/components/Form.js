@@ -69,13 +69,14 @@ class Form extends Component {
 	}
 }
 
-export default connect(
-    (state) => ({
-        form: state.form
-    }),
-    (dispatch) => ({
-        actions: bindActionCreators({
-            loginFromEmail
-        }, dispatch)
-    })
-)(Form);
+function mapStateToProps(state) {
+	return {
+		form: state.form 
+	}
+}
+
+function mapDispatchToProps(dispatch) {
+	return { actions: bindActionCreators({ loginFromEmail }, dispatch)}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
