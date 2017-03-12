@@ -8,20 +8,13 @@ import Form from '../components/Form';
 class App extends Component {
 
   render() {
-
-    const style = {
-      textAlign: 'center'
-      // display: 'flex',
-      // justifyContent: 'center',
-      // alignItems: 'center',
-      // height: 900
-    }
-
     return(
-      <div style={style}>
-        <h1>
-          RRF Boilerplate
-        </h1>
+      <div className="container">
+        <div className='flex-util-center'>
+          <h1>
+            RRF Boilerplate
+          </h1>
+        </div>
         <Form />
       </div>
     )
