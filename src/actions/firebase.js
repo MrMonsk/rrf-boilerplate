@@ -89,11 +89,9 @@ export function fetchUser() {
           payload: user
         })
         getUserProps(user.uid)(dispatch, getState)
-        getProjects(user.uid)(dispatch, getState)
       }
     })} else {
       getUserProps(currentUser.uid)(dispatch, getState)
-      getProjects(currentUser.uid)(dispatch, getState)
     }
   }
 }
