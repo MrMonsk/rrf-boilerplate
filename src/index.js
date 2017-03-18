@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import App from './containers/App.jsx';
+import App from './containers/App';
 
 const main = (
   <Provider store={store}>
