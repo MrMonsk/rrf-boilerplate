@@ -1,17 +1,10 @@
 import { LOGIN_FROM_EMAIL } from '../constants/actionTypes.js';
+import { firebaseConfig } from '../constants/config.js';
 
-const baseState = {
-		user: null,
-    auth: null,
-    accountId: null
-};
-
-export default function(state = baseState, action) {
-
+export default function(state = null, action) {
 	switch (action.type) {
 		case LOGIN_FROM_EMAIL:
 			return { ...state, user: action.payload };
-	
 	}
 
 	return state

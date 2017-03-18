@@ -1,4 +1,5 @@
-import { LOGIN_FROM_EMAIL } from '../constants/actionTypes.js';
+import { LOGIN_FROM_EMAIL } from '../constants/actionTypes';
+import firebase from 'firebase';
 
 export function loginFromEmail(user) {
 	return {

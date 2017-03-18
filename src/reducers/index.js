@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import form from './form';
+import firebase from './firebase'
 
 const rootReducer = combineReducers({
-    form
+    form,
+    firebase
 });
 
 export default rootReducer;
