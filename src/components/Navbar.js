@@ -3,16 +3,14 @@ import { Link } from 'react-router';
 
 export default function Navbar(props) {
   return (
-    <nav>
-      <div className='logo'>
-        <Link to='/'>{props.logo}</Link>
-      </div>
+    <nav className='navbar'>
+      <Link className='logo' to='/'>{props.logo}</Link>
       <div className='navLinks'>
       {(()=> {
         const navLinks = Object.keys(props.links);
         return navLinks.map((link) => {
           return (
-            <Link to={props.links[link]} key={link}>{link}</Link>
+            <Link className='navLink' to={props.links[link]} key={link}>{link}</Link>
           )
         });
       })()}
