@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import App from './containers/App';
+import routes from './routes';
+import { Router, browserHistory } from 'react-router';
 
 const main = (
   <Provider store={store}>
-    <App />
+    <Router history={browserHistory} routes={routes} />
   </Provider>
 );
 
