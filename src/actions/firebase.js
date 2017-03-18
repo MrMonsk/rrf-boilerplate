@@ -24,7 +24,7 @@ export function loginWithProvider(provider) {
 }
 
 export function registerUser(user) {
-  const userProps = user;
+  const createdAt = new Date().toUTCString();
   return (dispatch, getState) => {
     firebaseAuth.createUserWithEmailAndPassword(user.email, user.password).then(user => {
       dispatch ({
@@ -32,12 +32,12 @@ export function registerUser(user) {
           payload: user
         })
       FireBaseTools.getDatabaseReference("users").child(user.uid).update({
-        email: userProps.email,
-        name: userProps.name || null,
-        firstName: userProps.firstName || null,
-        lastName: userProps.lastName || null,
-        role: userProps.role || null,
-        createdAt: userProps.createdAt || null
+        email: user.email,
+        name: user.name || null,
+        firstName: user.firstName || null,
+        lastName: user.lastName || null,
+        role: user.role || null,
+        createdAt: createdAt || null
       })
       getUserProps(user.uid)(dispatch, getState);
     }).catch(error => {
