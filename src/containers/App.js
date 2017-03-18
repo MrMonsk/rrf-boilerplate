@@ -13,12 +13,12 @@ class App extends Component {
     }
     return(
       <div className='container'>
-        <Navbar logo='Home' links={homeLinks} />
         <div className='flex-util-center'>
           <h1>
             RRF Boilerplate
           </h1>
         </div>
+        <Navbar logo='Home' links={homeLinks} />
         {this.props.children}
       </div>
     )

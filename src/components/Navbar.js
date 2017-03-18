@@ -9,12 +9,12 @@ export default function Navbar(props) {
       </div>
       <div className='navLinks'>
       {(()=> {
-        const homeLinks = Object.keys(props.links);
-        return homeLinks.map((link) => {
+        const navLinks = Object.keys(props.links);
+        return navLinks.map((link) => {
           return (
             <Link to={props.links[link]} key={link}>{link}</Link>
           )
-        })
+        });
       })()}
       </div>
     </nav>
