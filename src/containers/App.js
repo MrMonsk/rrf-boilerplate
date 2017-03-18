@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import styles from './App.sass';
 
-import Form from '../components/Form';
-
 class App extends Component {
 
   render() {
@@ -15,7 +13,7 @@ class App extends Component {
             RRF Boilerplate
           </h1>
         </div>
-        <Form />
+        {this.props.children}
       </div>
     )
   }
