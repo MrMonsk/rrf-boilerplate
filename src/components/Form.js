@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { loginFromEmail } from '../actions/form'
+import { loginFromEmail } from '../actions/form';
+import { loginUser, registerUser, fetchUser } from '../actions/firebase'
 import styles from './Form.sass';
 
 import FormGroup from './FormGroup';
@@ -30,11 +31,13 @@ class Form extends Component {
 
 	onFormSubmit(e) {
 		e.preventDefault();
-		const { loginFromEmail } = this.props.actions;
+		const { loginFromEmail, registerUser } = this.props.actions;
 		loginFromEmail({ email: this.state.email, password: this.state.password });
+		registerUser({ email: this.state.email, password: this.state.password });
 	}
 
 	render() {
+		const { firebase, form } = this.props;
 		const { email, password } = this.state;
 
 		return (
@@ -64,18 +67,24 @@ class Form extends Component {
 						</button>
 					</div>
 				</form>
+				<div className='result' >
+					{ form && <h3>user: { form.user.email }</h3>
+					}
+				</div>
 			</div>
 		);
 	}
 }
 
-export default connect(
-    (state) => ({
-        form: state.form
-    }),
-    (dispatch) => ({
-        actions: bindActionCreators({
-            loginFromEmail
-        }, dispatch)
-    })
-)(Form);
+function mapStateToProps(state) {
+	return {
+		form: state.form,
+		firebase: state.firebase 
+	}
+}
+
+function mapDispatchToProps(dispatch) {
+	return { actions: bindActionCreators({ loginFromEmail, loginUser, registerUser, fetchUser }, dispatch)}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
