@@ -6,7 +6,7 @@ export default function Navbar(props) {
     <nav className='navbar'>
       <Link className='logo' to='/'>{props.logo}</Link>
       <div className='navLinks'>
-      {(()=> {
+      {(() => {
         const navLinks = Object.keys(props.links);
         return navLinks.map((link) => {
           return (

@@ -1,5 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
 
 const baseLoaders = [
   {
@@ -15,6 +16,15 @@ const baseLoaders = [
   }
 ];
 
+function wrapStrings(obj) {
+    const newobj = {};
+    Object.keys(obj).forEach((key) => {
+        const val = obj[key];
+        newobj[key] = typeof val === 'string' ? JSON.stringify(val) : val;
+    });
+    return newobj;
+}
+
 module.exports = {
   devtool: 'source-map',
   entry: __dirname + '/src/index.js',
@@ -27,6 +37,7 @@ module.exports = {
       publicPath: '/styles/',
       allChunks: true
     }),
+    new webpack.DefinePlugin(wrapStrings(require('./env.json')))
   ],
   module : {
     loaders : baseLoaders.concat([
