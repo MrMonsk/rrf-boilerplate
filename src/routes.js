@@ -8,10 +8,12 @@ import App from './containers/App';
 // Components
 import NoMatch from './components/NoMatch';
 import Form from './components/Form';
+import KeenForm from './components/KeenForm';
 
 export default (
   <Route path="/" component={App}>
     <Route path="/form" component={Form} />
     <Route path="/404" component={NoMatch} />
+    <Route path="/keen" component={KeenForm} />
   </Route>
 );
