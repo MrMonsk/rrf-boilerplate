@@ -20,6 +20,7 @@ export default class KeenForm extends Component {
     this.onTimeframeInput = this.onTimeframeInput.bind(this);
     this.onSelectChange = this.onSelectChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   onAccountIdInput(e) {
@@ -39,7 +40,7 @@ export default class KeenForm extends Component {
   }
 
   handleClick(e) {
-    fetchRedisStats();
+    fetchRedisStats(this.state.accountId);
   }
 
   onFormSubmit(e) {
