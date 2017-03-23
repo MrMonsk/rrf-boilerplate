@@ -1,6 +1,6 @@
 const redisURL = 'https://z2kvzxph51.execute-api.us-west-2.amazonaws.com/prod/stats';
 
-export function fetchRedisStats() {
+export function fetchRedisStats(accountId='') {
   fetch(redisURL)
   .then((response) => response.json())
   .then(function(data) {
