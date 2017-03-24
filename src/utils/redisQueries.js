@@ -2,14 +2,16 @@ const redisURL = 'https://z2kvzxph51.execute-api.us-west-2.amazonaws.com/prod/st
 
 export function fetchRedisStats(accountId='') {
   const fetchURL = parse(accountId);
-  fetch(fetchURL)
-  .then((response) => response.json())
-  .then(function(data) {
-    console.log(data)
-    return data
-  })
-  .catch(function(err) {
-    console.log(err)
+  return new Promise(function(resolve, reject) {
+    fetch(fetchURL)
+    .then((response) => response.json())
+    .then(function(data) {
+      console.log(data)
+      resolve(data)
+    })
+    .catch(function(err) {
+      reject(err)
+    })
   })
 }
 

@@ -40,7 +40,20 @@ export default class KeenForm extends Component {
   }
 
   handleClick(e) {
-    fetchRedisStats(this.state.accountId);
+    fetchRedisStats(this.state.accountId).then((data) => {
+      const redisStatKeys = Object.keys(data);
+      let redisStats = [];
+      redisStatKeys.map((key) => {
+        redisStats.push( key[data[key]] )
+      })
+      const parsedRedis = Object.keys(data).map((keyName) => {
+        return {
+          [keyName]: data[keyName]
+        }
+      })
+      console.log(parsedRedis)
+      this.setState({ results: data });
+    });
   }
 
   onFormSubmit(e) {

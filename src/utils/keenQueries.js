@@ -49,8 +49,8 @@ export function getAccountExtraction(accountId, latest) {
       if (err) {
         reject(err);
       } else {
+        console.log(res)
         resolve(res.result);
-        console.log(res.result)
       }
     })
   })
