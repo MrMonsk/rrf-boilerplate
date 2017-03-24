@@ -32,6 +32,7 @@ export function getFlowErrors(accountId, flowId, timeframe) {
         reject(err);
       } else {
         resolve(res.result);
+        console.log(res.result);
       }
     })
   })

@@ -42,17 +42,13 @@ export default class KeenForm extends Component {
   handleClick(e) {
     fetchRedisStats(this.state.accountId).then((data) => {
       const redisStatKeys = Object.keys(data);
-      let redisStats = [];
-      redisStatKeys.map((key) => {
-        redisStats.push( key[data[key]] )
-      })
-      const parsedRedis = Object.keys(data).map((keyName) => {
+      const redisStats = redisStatKeys.map((keyName) => {
         return {
           [keyName]: data[keyName]
         }
       })
-      console.log(parsedRedis)
-      this.setState({ results: data });
+      console.log(redisStats)
+      this.setState({ results: redisStats });
     });
   }
 
@@ -134,16 +130,18 @@ export default class KeenForm extends Component {
           fetch redis
         </button>
           {(() => {
-            if (results.length > 1) {
+            if (results.length) {
               return results.map((result) => {
-                return (
-                  <div>
-                    <p>{result.stepChildId}</p>
-                    <p>{result.error}</p>
-                    <p>{result.result}</p>
-                    <p>{JSON.stringify(result)}</p>
-                  </div>
-                )
+                const keys = Object.keys(result)
+                return keys.map((key) => {
+                  console.log('render something');
+                  return (
+                    <div>
+                      <h3>{key}</h3>
+                      <p>{JSON.stringify(result[key])}</p>
+                    </div>
+                  )
+                })
               })
             }
           })()}
