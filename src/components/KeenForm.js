@@ -90,6 +90,7 @@ export default class KeenForm extends Component {
       <div className='formContainer'>
         <form id='form' className='form' onSubmit={ this.onFormSubmit }>
           <div style={{width: 400, textAlign: 'center' }}>
+            <p>select your query type</p>
             <select onChange={ this.onSelectChange } value={queryType}>
               <option value='none'></option>
               <option value='flow error'>Flow Error</option>
