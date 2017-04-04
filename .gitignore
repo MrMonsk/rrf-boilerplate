@@ -6,6 +6,7 @@ firebase-debug.log
 
 build/
 package/
+env.json
 
 .DS_Store
 *.zip

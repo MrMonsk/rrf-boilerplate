@@ -6,12 +6,17 @@ import requireAuth from './utils/authenticated';
 import App from './containers/App';
 
 // Components
+import Account from './components/Account';
 import NoMatch from './components/NoMatch';
-import Form from './components/Form';
+import KeenForm from './components/KeenForm';
+import Users from './components/Users';
 
 export default (
   <Route path="/" component={App}>
-    <Route path="/form" component={Form} />
+    <Route path="accounts/:accountId" component={Account}>
+      <Route path="accounts/:accountId/keen" component={KeenForm} />
+      <Route path="accounts/:accountId/users" component={Users} />
+    </Route>
     <Route path="/404" component={NoMatch} />
   </Route>
 );
